@@ -1,13 +1,14 @@
 # Прогресс
 
-Легенда: 🔒 закрыто · ▶️ в работе · ✅ сдано · ⚠️ есть претензия ученика
+Легенда: 🔒 закрыто · ▶️ в работе · ✅ сдано · ⚠️ есть претензия ученика · 🔓 TASK готов, ждёт своей очереди по гейту
 
-## Приоритеты трека (07.08.2026)
+## Приоритеты трека (12.08.2026, после пакета Sonnet 5 — исправление провала пакета 10.08)
 
-1. **Главное:** план Sonnet `docs/superpowers/plans/2026-08-05-post-week0-aqa-plan.md`.
-2. **Gemini-отчёт** — только **устное** интервью; не подменяет план Sonnet.
-3. **После сдачи 1.4:** пакет **Sonnet 5** — ревью главы + рекомендации; **главное: задания на новые темы (2.x+) без паттерна кривых старых TASK**; неделю 1 править можно, но не вместо новых. Роли: Sonnet = план/темы/задания/ревью; коуч = следит за обучением. Фидбек: `01_oop/STUDENT_FEEDBACK_for_sonnet.md`.
-4. Остальное (0.5 ANSWERS, Gemini) — по запросу / пакетом после Sonnet.
+1. **Главное:** план `docs/superpowers/plans/2026-08-12-asap-two-plus-weeks-plan.md` (заменяет план 10.08 — та политика «TASK потом отдельным пакетом» признана провалом, разбор в `docs/sonnet_reviews/2026-08-12-package-failure-and-market-review.md`).
+2. **Активный блок: 3.1** — `03_api_framework/3.1_crud/TASK.md`. Дальше: 3.2 → 3.3 → (опционально) 4.x. Неделя 2 закрыта.
+3. **Gemini-отчёт** — только устное; не подменяет план Sonnet.
+4. Роли: Sonnet = план/темы/задания/ревью; коуч = ведёт по TASK + `CALENDAR.md` + `docs/sonnet_reviews/COACH_RECS_2026-08-12.md`.
+5. Рыночное обоснование каждого блока (что обязательно, что опционально, что вырезано) — `docs/sonnet_reviews/2026-08-12-task-self-review-vs-real-interviews.md`.
 
 
 
@@ -34,14 +35,49 @@
 | 1.1 OOP              | ✅ тесты; ⚠️ фидбек в `STUDENT_FEEDBACK_for_sonnet.md`                                      |
 | 1.2 Исключения       | ✅; ⚠️ качество TASK — в фидбеке                                                            |
 | 1.3 Декораторы       | ✅ тесты; ⚠️ **~2ч, очень тяжело**; худшее задание трека на сейчас; детали в фидбеке Sonnet |
-| **1.4 Тривиа-drill** | **▶️ ТЕКУЩИЙ** → `01_python_core/04_python_trivia/`                                        |
+| 1.4 Тривиа-drill     | ✅ код 7/7 + ANSWERS (теория слабовата — на ревью Sonnet) → `01_python_core/04_python_trivia/` |
 
 
-**Гейт недели 1:** 1.1–1.4 сданы → Sonnet 5 (новые задания 2.x+ + ревью/реки; неделю 1 можно поправить) → неделя 2.
+**Гейт недели 1:** 1.1–1.4 сданы ✅ → пакет **Sonnet 5** выдан 2026-08-10 (ревью, календарь, новые 2.x+, резюме, рекомендации коучу).
+
+## Неделя 2 — `02_pytest_craft`
+
+| Блок | Тема | Статус |
+|------|------|--------|
+| 2.1  | Фикстуры (yield/teardown, scope=module, фабрика) | ✅ сдано 11.08 — `02_pytest_craft/2.1_fixtures/` |
+| 2.2  | Моки (`unittest.mock`, mock вместо реальной сети) | ✅ 12.08: А сделана; Б/В **скип осознанно, подтверждено рыночным ревью 12.08**. Демо коуча: `demo_helpers.py` + `test_demo_patch_under_helper.py` |
+| 2.3  | Сильные ассерты + parametrize | ✅ сдано 12.08 — `02_pytest_craft/2.3_strong_asserts/` |
+| 2.4  | Маркеры/конфиг pytest | ✅ сдано 12.08 — маркер `regression` в `pytest.ini` + ANSWERS |
+
+## Неделя 3 — `03_api_framework` (пакет Sonnet 5, 12.08.2026 — открыта целиком, без ожидания)
+
+| Блок | Тема | Статус |
+|------|------|--------|
+| **3.1**  | CRUD в `BaseApi` | ▶️ **активный блок** — `03_api_framework/3.1_crud/TASK.md` |
+| 3.2  | Свои исключения + негативный тест | 🔓 TASK готов — `03_api_framework/3.2_exceptions_and_negative/TASK.md` |
+| 3.3  | Unit-тесты слоёв на моках | 🔓 TASK готов — `03_api_framework/3.3_unit_tests_with_mocks/TASK.md` |
+
+## Неделя 4 — `04_interview_theory` (буфер, ОПЦИОНАЛЬНО)
+
+| Блок | Тема | Статус |
+|------|------|--------|
+| 4.1  | Allure минимум | 🔓 TASK готов, опционален — `04_interview_theory/4.1_allure_minimum/TASK.md` |
+| 4.2  | Live-coding под таймер | 🔓 TASK готов, опционален — `04_interview_theory/4.2_timer_drill/TASK.md` |
+| 4.3  | Voice round 2 (+ Kafka/gRPC формулировки) | 🔓 TASK готов, опционален — `04_interview_theory/4.3_voice_round2/TASK.md` |
+
+**Гейт недели 2:** 2.3–2.4 сданы → неделя 3.
+**Гейт недели 3:** 3.1–3.3 сданы → трек по факту закрыт для «готовности к собесу»; неделя 4 — по остаточному времени, не обязательна.
 
 ## Ссылки
 
 - Промпт голоса: `voice_mock_prompt.md`
 - Gemini (устное): `05_interview_voice/gemini_mock_interview_report.md`
 - Фидбек методисту: `01_python_core/01_oop/STUDENT_FEEDBACK_for_sonnet.md`
+- Ревью 1.4 + недели 1: `docs/sonnet_reviews/2026-08-10-week1-and-1.4-review.md`
+- **Разбор провала пакета 10.08 + вердикт по мокам:** `docs/sonnet_reviews/2026-08-12-package-failure-and-market-review.md`
+- **Рыночное саморевью TASK:** `docs/sonnet_reviews/2026-08-12-task-self-review-vs-real-interviews.md`
+- **План ASAP 2–4 недели:** `docs/superpowers/plans/2026-08-12-asap-two-plus-weeks-plan.md`
+- Рекомендации коучу: `docs/sonnet_reviews/COACH_RECS_2026-08-12.md`
+- Резюме — заметки: `docs/resume/RESUME_NOTES_2026-08-10.md`
+- Календарь: `CALENDAR.md`
 
