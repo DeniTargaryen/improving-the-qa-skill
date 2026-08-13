@@ -10,7 +10,7 @@
 
 План: `docs/superpowers/plans/2026-08-05-post-week0-aqa-plan.md`  
 Прогресс: `PROGRESS.md`  
-Правила коуча: `.cursor/rules/interview-prep-coach.mdc`  
+Правила коуча: `.cursor/rules/interview-prep-coach.mdc` (**§0 ASAP / цена времени — читать первым**; 13.08 после слива ~30 мин на `patch` из‑за плохого объяснения)  
 Фидбек методисту: `01_python_core/01_oop/STUDENT_FEEDBACK_for_sonnet.md`
 
 ## Порядок

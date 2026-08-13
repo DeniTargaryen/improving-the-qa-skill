@@ -13,18 +13,22 @@
 Класс внутри всё равно называется BaseApi.
 """
 import requests
-
+from api_errors import ApiError, NotFoundError
 
 class BaseApi:
     def __init__(self, base_url: str):
         self.base_url = base_url
 
-    def get(self, path: str) -> dict:
+    def get(self, path: str) -> dict|None:
         full_url = self.base_url + path
         r = requests.get(
             url=full_url,
             headers={"User-Agent": "Mozilla/5.0", "content-type": "application/json"},
         )
-        # Сейчас: голый assert, как в week0. Замени по TASK.md на raise NotFoundError/ApiError.
-        assert r.status_code == 200, f"Ожидали статус код 200, пришёл {r.status_code}"
-        return r.json()
+        # Ученик (3.2): вместо assert — свои исключения. 404 отдельно, остальной не-200 — ApiError.
+        if r.status_code == 404:
+            raise NotFoundError()
+        if r.status_code != 200:
+             raise ApiError()
+        else:
+            return r.json()

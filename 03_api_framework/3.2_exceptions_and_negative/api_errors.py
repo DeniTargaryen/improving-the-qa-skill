@@ -11,3 +11,9 @@
 """
 
 # ApiError(Exception) и NotFoundError(ApiError) — напиши сам, как в 1.2.
+
+class ApiError(Exception):
+    pass
+
+class NotFoundError(ApiError):
+    pass
