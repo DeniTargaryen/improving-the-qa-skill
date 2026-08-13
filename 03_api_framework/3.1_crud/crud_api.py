@@ -14,6 +14,8 @@ import requests
 class BaseApi:
     def __init__(self, base_url: str):
         self.base_url = base_url
+        self.headers = {"User-Agent": "Mozilla/5.0", "content-type": "application/json"}
+        # Ученик сам вынес headers в атрибут — ок, лучше копипасты в каждом методе.
 
     def get(self, path: str, expected_status: int = 200) -> dict:
         full_url = self.base_url + path
@@ -25,13 +27,26 @@ class BaseApi:
         return r.json()
 
     def post(self, path: str, json: dict, expected_status: int = 201) -> dict:
-        raise NotImplementedError
+        full_url = self.base_url + path
+        r = requests.post(url=full_url, json=json, headers=self.headers)
+        assert r.status_code == expected_status, f"Ожидали статус код {expected_status}, пришёл {r.status_code}"
+        return r.json()
 
     def put(self, path: str, json: dict, expected_status: int = 200) -> dict:
-        raise NotImplementedError
+        full_url = self.base_url + path
+        r = requests.put(url=full_url, json=json, headers=self.headers)
+        assert r.status_code == expected_status, f"Ожидали статус код {expected_status}, пришёл {r.status_code}"
+        return r.json()
 
     def patch(self, path: str, json: dict, expected_status: int = 200) -> dict:
-        raise NotImplementedError
+        full_url = self.base_url + path
+        r = requests.patch(url=full_url, json=json, headers=self.headers)
+        assert r.status_code == expected_status, f"Ожидали статус код {expected_status}, пришёл {r.status_code}"
+        return r.json()
 
     def delete(self, path: str, expected_status: int = 200) -> None:
-        raise NotImplementedError
+        full_url = self.base_url + path
+        r = requests.delete(url=full_url, headers=self.headers)
+        assert r.status_code == expected_status, f"Ожидали статус код {expected_status}, пришёл {r.status_code}"
+        # Коуч: было return r.json(); TASK требует None. Ученик написал каркас delete сам.
+        return None

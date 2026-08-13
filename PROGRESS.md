@@ -5,7 +5,7 @@
 ## Приоритеты трека (12.08.2026, после пакета Sonnet 5 — исправление провала пакета 10.08)
 
 1. **Главное:** план `docs/superpowers/plans/2026-08-12-asap-two-plus-weeks-plan.md` (заменяет план 10.08 — та политика «TASK потом отдельным пакетом» признана провалом, разбор в `docs/sonnet_reviews/2026-08-12-package-failure-and-market-review.md`).
-2. **Активный блок: 3.1** — `03_api_framework/3.1_crud/TASK.md`. Дальше: 3.2 → 3.3 → (опционально) 4.x. Неделя 2 закрыта.
+2. **Активный блок: 3.2** — `03_api_framework/3.2_exceptions_and_negative/TASK.md`. Дальше: 3.3 → (опционально) 4.x.
 3. **Gemini-отчёт** — только устное; не подменяет план Sonnet.
 4. Роли: Sonnet = план/темы/задания/ревью; коуч = ведёт по TASK + `CALENDAR.md` + `docs/sonnet_reviews/COACH_RECS_2026-08-12.md`.
 5. Рыночное обоснование каждого блока (что обязательно, что опционально, что вырезано) — `docs/sonnet_reviews/2026-08-12-task-self-review-vs-real-interviews.md`.
@@ -53,8 +53,8 @@
 
 | Блок | Тема | Статус |
 |------|------|--------|
-| **3.1**  | CRUD в `BaseApi` | ▶️ **активный блок** — `03_api_framework/3.1_crud/TASK.md` |
-| 3.2  | Свои исключения + негативный тест | 🔓 TASK готов — `03_api_framework/3.2_exceptions_and_negative/TASK.md` |
+| **3.1**  | CRUD в `BaseApi` | ✅ сдано 13.08 — клиент ок; тест поправлен из‑за jsonplaceholder id=101 |
+| 3.2  | Свои исключения + негативный тест | ▶️ **активный** — `03_api_framework/3.2_exceptions_and_negative/TASK.md` |
 | 3.3  | Unit-тесты слоёв на моках | 🔓 TASK готов — `03_api_framework/3.3_unit_tests_with_mocks/TASK.md` |
 
 ## Неделя 4 — `04_interview_theory` (буфер, ОПЦИОНАЛЬНО)
@@ -73,7 +73,7 @@
 - Промпт голоса: `voice_mock_prompt.md`
 - Gemini (устное): `05_interview_voice/gemini_mock_interview_report.md`
 - Фидбек методисту: `01_python_core/01_oop/STUDENT_FEEDBACK_for_sonnet.md`
-- Ревью 1.4 + недели 1: `docs/sonnet_reviews/2026-08-10-week1-and-1.4-review.md`
+- HR Ozon 13.08 (пробелы): `docs/sonnet_reviews/2026-08-13-ozon-hr-misses.md`
 - **Разбор провала пакета 10.08 + вердикт по мокам:** `docs/sonnet_reviews/2026-08-12-package-failure-and-market-review.md`
 - **Рыночное саморевью TASK:** `docs/sonnet_reviews/2026-08-12-task-self-review-vs-real-interviews.md`
 - **План ASAP 2–4 недели:** `docs/superpowers/plans/2026-08-12-asap-two-plus-weeks-plan.md`
