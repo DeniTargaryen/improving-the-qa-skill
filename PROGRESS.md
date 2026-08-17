@@ -6,7 +6,7 @@
 
 1. **Главное:** план `docs/superpowers/plans/2026-08-15-post-32-two-plus-weeks-plan.md` (пролонгация плана 12.08 — тот план не отменяется, недели 1–2 и 3.1/3.2 по нему сданы).
 2. **Правка задним числом (важно):** дневной пакет 15.08 ошибочно писал «3.3 скип» / отмечал 3.3 как сделанное — **обе записи неверны**. 3.3 **активен, не сдан** (`test_unit_mocks.py` пустой), и статус вернулся на **обязательный** после рыночной проверки — реальные вакансии AQA Python 2026 (ИнфоТеКС, СберОС) прямо требуют «pytest (мок-объекты/mock)». Разбор: `docs/sonnet_reviews/2026-08-15-market-vs-student-feedback.md`.
-3. **Активный блок: 3.4** — `03_api_framework/3.4_pydantic_schedule_check/TASK.md`. Дальше 3.5.
+3. **Активный блок: 3.5** — `03_api_framework/3.5_retry_helper_with_mock/TASK.md`. 3.4 сдан 17.08.
 4. **Gemini-отчёт** — только устное; не подменяет план Sonnet.
 5. Роли: Sonnet = план/темы/задания/ревью; коуч = ведёт по TASK + `CALENDAR.md` + `docs/sonnet_reviews/COACH_RECS_2026-08-15.md`.
 6. Рыночное обоснование каждого блока — `docs/sonnet_reviews/2026-08-12-task-self-review-vs-real-interviews.md` (базовое) + `docs/sonnet_reviews/2026-08-15-market-vs-student-feedback.md` (правка по мокам).
@@ -49,8 +49,8 @@
 | **3.1**  | CRUD в `BaseApi` | ✅ сдано 13.08 |
 | **3.2**  | Свои исключения + негативный тест | ✅ сдано 13.08 — `patch` на 500 нужен, не «мок ради мока» |
 | **3.3**  | Unit-тесты слоёв на моках | ✅ сдано 15.08 — патч на `posts_client.get`, dict/list, `==`; path-assert нет (заметка в тесте) |
-| **3.4**  | Pydantic-модель (`Entry`/`Schedule`) + `check_values` | ▶️ **активный** — `03_api_framework/3.4_pydantic_schedule_check/TASK.md` |
-| **3.5**  | Тестирование retry-хелпера через мок | 🔓 **новый**, TASK готов — `03_api_framework/3.5_retry_helper_with_mock/TASK.md` |
+| **3.4**  | Pydantic-модель (`Entry`/`Schedule`) + `check_values` | ✅ сдано 17.08 — модели свои; тесты вставкой коуча после 2 кривых попыток |
+| **3.5**  | Тестирование retry-хелпера через мок | ▶️ **активный** — `03_api_framework/3.5_retry_helper_with_mock/TASK.md` |
 
 ## Неделя 4 — `04_interview_theory` (буфер, ОПЦИОНАЛЬНО)
 

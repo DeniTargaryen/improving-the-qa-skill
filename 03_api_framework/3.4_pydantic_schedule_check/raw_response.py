@@ -27,3 +27,27 @@ RAW_SCHEDULE_RESPONSE = {
         },
     ],
 }
+
+NOT_VALID_RAW_SCHEDULE_RESPONSE= {
+    "contract_id": "abc-123",
+    "entries": [
+        {
+            "month": 1,
+            "status": "paid",
+            "payment_total": 5000,
+            "payment_debt": "0.00",
+        },
+        {
+            "month": 2,
+            "status": "planned",
+            "payment_total": "5000.00",
+            "payment_debt": "5000.00",
+        },
+        {
+            "month": 3,
+            "status": "planned",
+            "payment_total": "5000.00",
+            "payment_debt": 1000,
+        },
+    ],
+}

@@ -3,11 +3,14 @@
 
 Ревьюеру (3.3): ученик сам дошёл до patch("posts_layer.posts_client.get"),
 отдельный return_value dict для get_post и list для get_posts, равенство == k.
-Трудности: сначала мокал requests.get / сами get_post (ложный зелёный в сеть);
-путал этаж «ответ HTTP» (status_code) и этаж «клиент уже вернул dict».
-Строка status_code перед return_value = k ничего не делает (объект выкидывается).
-Можно лучше: assert_called с path=/posts/2 и /posts/ (TASK просил; на однострочнике
-почти не ломается); pytest.raises(AssertionError) вместо голого Exception;
+Попыток «проверь» с красным: 2. (1) мокал mocked_api.requests.get + .json на функции,
+не на return_value, звал api.get а не get_post. (2) патчил сами get_post/get_posts
+(ложный зелёный ~1.3s в сеть; импорт from posts_layer уже обошёл патч).
++1 промежуточное ревью без слова «проверь»: уже posts_client.get, но один dict k
+на get_posts (isinstance list красный) + мёртвый status_code.
+Путаницы: requests.get vs get_post vs posts_client.get; HTTP-ответ (status_code)
+vs клиент уже вернул dict; патч функции под тестом vs зависимости под ней.
+Можно лучше: assert_called path=/posts/2 и /posts/; raises(AssertionError);
 убрать мёртвый status_code и закомментированный BaseApi.
 """
 import pytest
